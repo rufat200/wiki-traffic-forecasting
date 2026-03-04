@@ -1,17 +1,22 @@
-# Python-generated files
+# Python files
 __pycache__/
 *.py[oc]
 build/
 dist/
 wheels/
 *.egg-info
+main1.py
 
 # Virtual environments
 .venv
-.python-version
-pyproject.toml
-uv.lock
-media/
-media_ai/
-final_media/
-README.md
+
+# Media files
+
+MEDIA_z/
+
+media/graphs/*
+!media/graphs/.gitkeep
+
+media/model_weights/*
+!media/model_weights/.gitkeep
+!media/model_weights/lgbm_traffic_model-900-0.09-2026-03-04_15-44-25.pkl
