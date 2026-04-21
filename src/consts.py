@@ -7,20 +7,29 @@ dataset_dir = kagglehub.dataset_download("sandeshbhat/wikipedia-web-traffic-2018
 
 PATH = os.path.join(dataset_dir, "Wiki_Page_views.csv")
 FEATURES = [
-    'lag_1', 'lag_2', 'lag_7', 'lag_14', 'lag_21', 
-    'is_weekend', 'day_of_week', 'day_of_month', 
+    'lag_1', 'lag_2', 'lag_7', 'lag_14', 'lag_21', 'lag_28','lag_30',
+    'is_weekend', 'day_of_month',
     'rolling_mean_7', 'rolling_std_7', 'rolling_max_7',
     'z_7', 'slope_7',
-    'diff_1_7', 'diff_1_2',
+    'diff_1_7', 'diff_1_2', 'diff_1', 'diff_2', 
+    'ratio_1_7', 'ratio_7_14', 
     'page_median', 'page_std',
     'global_mean',
-    'agent', 'access', 'language',
+    'ewm_7', 'ewm_30',
+    'lang_te',
 ]
-CAT_FEATURES = ['agent', 'access', 'language']
+CAT_FEATURES = [
+    'page_type',
+    'project',
+    'language',
+    'popularity_bin',
+    'volatility_bin',
+    'day_of_week',
+]
 
 SPLIT_DATE = '2019-11-30'
 TARGET = 'Visits'
 
-N_ESTIMATORS = 900
+N_ESTIMATORS = 3000
 LRN = 0.09
 DATE = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
